@@ -33,7 +33,7 @@ for d in range(len(num1)-1,-1,-1):
     else:
         resultado = '0' + resultado
     # Actualizamos el número acarreado 
-    if r == 2:
+    if r >= 2:
         acarreo = 1
     else:
         acarreo = 0
