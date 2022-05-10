@@ -26,3 +26,10 @@ else:
     print(f'La plabra {palabra} no está ordenada.')
 
 
+# Función
+def es_alfabetica(palabra):
+    for c, i in zip(palabra, range(len(palabra))):
+        if i != 0:
+            if c < palabra[i]:
+                return False
+    return True
