@@ -6,29 +6,25 @@ determinar si es correcta son:
 ~Como mínimo debe tener dos dígitos.
 '''
 
+from click import password_option
+
+
 caracteres = 'abcdefghijklmnopqrstuvwxyz'
 digitos = '0123456789'
-pswd_ok = True
 
-# Ingresar el password
-pswd = input('Ingrese la password: ')
+def verificar_password(password):
+    contador_digitos = 0
+    if len(password) < 8:
+        return False
+    for c in password:
+        if c not in caracteres and c not in digitos:
+            return False
+        if c in digitos:
+            contador_digitos += 1
+    if contador_digitos < 2:
+        return False
+    return True
 
-# Verificar el largo
-if len(pswd) < 8:
-    pswd_ok = False
-
-# Verificar si contiene caracteres y al menos 2 digitos
-contador_digitos = 0
-for c in pswd:
-    if c not in caracteres and c not in digitos:
-        pswd_ok = False
-    if c in digitos:
-        contador_digitos += 1 
-
-if contador_digitos < 2:
-    pswd_ok = False
-
-if pswd_ok:
-    print('La contraseña es correcta.')
-else:
-    print('La contraseña es incorrecta.')
+password = input('Ingrese el password: ')
+print(verificar_password(password))
+    

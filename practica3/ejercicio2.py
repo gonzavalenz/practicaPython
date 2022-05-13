@@ -4,32 +4,18 @@ ejemplo, "amor", "chino" e "himno" son palabras "alfabéticas". Diseña un progr
 una palabra y nos diga si es alfabética o no.
 '''
 
-# Ingresar la palabra
-palabra = input('Ingrese una palabra: ')
-# Val: Validar que la palabra esté ordenada
-val = True
-
-# Recorrer la palabra y el rango de su largo
-for c, p in zip(palabra, range(len(palabra))):
-    # Si p es 0, pasar a la siguiente letra
-    if p == 0:
-        pass
-    # Si la latra (c) es menor a letra anterior, val = False
-    elif c < palabra[p-1]:
-        val = False
-        break
-
-# Mostrar el resultado
-if val:
-    print(f'La palabara {palabra} esta ordenada.')
-else:
-    print(f'La plabra {palabra} no está ordenada.')
-
-
-# Función
-def es_alfabetica(palabra):
-    for c, i in zip(palabra, range(len(palabra))):
+def alfabetica(palabra):
+    # Recorrer la palabra
+    for letra, i in zip(palabra,range(len(palabra))):
         if i != 0:
-            if c < palabra[i]:
+            # Si la letra es menor a la anterior retornar falso
+            if letra < palabra[i-1]:
                 return False
     return True
+
+palabra = input('Ingrese una palabra: ')
+
+if alfabetica(palabra):
+    print('La palabra es alfabética.')
+else:
+    print('La palabra no es alfabética.')

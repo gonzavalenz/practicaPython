@@ -6,13 +6,13 @@ programa que ayude al creador de pasatiempos. El programa recibirá una cadena y
 mostrará otra en la que cada vocal ha sido reemplazada por un punto.
 '''
 
-# Ingresar la cadena
-cadena = input('Ingrese el texto: ')
+caracteres = 'aeiou'
 
-caracteres = ['a','e','i','o','u']
+def puntos(texto):
+    for c in caracteres:
+        texto = texto.replace(c,'.')
+    return texto 
 
-# Recorrer la lista de caracteres para reemplazarlos en la cadena
-for c in caracteres:
-    cadena = cadena.replace(c,'.')
+cadena = input('Ingrese un texto: ')
 
-print(cadena)
+print(puntos(cadena))

@@ -14,19 +14,19 @@ teclado = {
     9:'wxyz'
 }
 
+
+def letra_teclado(letra):
+    letra = letra.lower()
+    tecla = ''
+    pos = 0    
+    # Recorrer el diccionario, guardar la tecla donde está la letra y su posición 
+    for n, letras in teclado.items():
+        if l in letras:
+            tecla = str(n)
+            pos = letras.index(l) + 1
+    return (f'#{tecla*pos}')
+
 # Ingresar la letra 
 l = input('Ingrese una letra mayúscula: ')
-l = l.lower()
-tecla = ''
-pos = 0
 
-# Recorrer el diccionario, guardar la tecla donde está la letra y su posición 
-for n, letras in teclado.items():
-    if l in letras:
-        tecla = str(n)
-        pos = letras.index(l) + 1
-
-# Mostrar el resultado en consola
-print(f'#{tecla * pos}')
-
-
+print(letra_teclado(l))
