@@ -22,14 +22,15 @@ letras = 'abcdefghijklmnopqrstuvwxyz'
 number = input('Ingrese el número telefónico: ')
 
 # Recorrer el número para reemplazar las letras
-tecla = ''
-for c in number:
-    if c in letras:
-        for tcl, lts in teclado.items():
-            if c in lts:
-                tecla = str(tcl)
-                
-        number = number.replace(c,tecla)
-
+def cambio_numero(number):
+    tecla = ''
+    for c in number:
+        if c in letras:
+            for tcl, lts in teclado.items():
+                if c in lts:
+                    tecla = str(tcl)
+                    
+            number = number.replace(c,tecla)
+    return number
 # Mostrar el resultado 
-print(number)
+print(cambio_numero(number))
